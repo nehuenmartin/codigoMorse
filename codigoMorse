@@ -1,0 +1,40 @@
+def texto_a_morse(texto):
+    CODIGO_MORSE = { 'a':'.-', 'b':'-...', 
+                    'c':'-.-.', 'd':'-..', 'e':'.', 
+                    'f':'..-.', 'g':'--.', 'h':'....', 
+                    'i':'..', 'j':'.---', 'k':'-.-', 
+                    'l':'.-..', 'm':'--', 'n':'-.', 
+                    'o':'---', 'p':'.--.', 'q':'--.-', 
+                    'r':'.-.', 's':'...', 't':'-', 
+                    'u':'..-', 'v':'...-', 'w':'.--', 
+                    'x':'-..-', 'y':'-.--', 'z':'--..', 
+                    '0':'-----', '1':'.----', '2':'..---', 
+                    '3':'...--', '4':'....-', '5':'.....', 
+                    '6':'-....', '7':'--...', '8':'---..', 
+                    '9':'----.' }
+    texto_en_morse = ""
+    for char in texto:
+        char = char.lower()
+        if char in CODIGO_MORSE:
+            texto_en_morse += CODIGO_MORSE[char] + " "
+    return texto_en_morse
+
+texto = "este lenguaje se uso en barcos"
+print(texto_a_morse(text))
+
+"""
+una vez que tienes el diccionario de código morse, puedes crear una 
+variable llamada 'texto_en_morse' y utilizar un ciclo 'for' para recorrer 
+cada carácter de la cadena de texto que deseas convertir, buscando su 
+representación en el diccionario y agregándola a la variable 'texto_en_morse' en cada iteración.
+'char.lower()' es un método de Python que convierte una cadena de texto a minúsculas.
+Este método se aplica a una variable de tipo cadena (como char) y devuelve una 
+nueva cadena con todos los caracteres en minúsculas.
+
+En este caso, se utiliza para convertir todos los caracteres de la cadena 
+texto a minúsculas antes de buscarlos en el diccionario 'CODIGO_MORSE'.
+
+Esto es para asegurarnos de que el diccionario pueda encontrar el carácter, 
+independientemente de si se ingresa en mayúsculas o minúsculas.
+En resumen, 'char.lower()´ se utiliza para convertir el caracter que se esta 
+recorriendo en el ciclo 'for' a minusculas para que este sea encontrado en el diccionario y se agregue al 'texto_en_morse'.
